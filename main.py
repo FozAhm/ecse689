@@ -1,5 +1,6 @@
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error, r2_score
+from sklearn.metrics import accuracy_score
 from sklearn import svm, linear_model
 import numpy as np
 import csv
@@ -23,8 +24,8 @@ with open(data_location) as csv_data:
     for row in csv_reader:
         if row_count > row_offset and row_count < row_stop:
             if data_type == 'default':
-                all_x.append(row[1:24])
-                all_y.append(row[24])
+                all_x.append(list(map(int, row[1:24])))
+                all_y.append(int(row[24]))
         row_count += 1
 
 for i in range(10):
@@ -34,11 +35,7 @@ if algorithm == 'SVC':
     X_train, X_test, y_train, y_test = train_test_split(all_x, all_y, test_size=0.2, random_state=0)
     clf = svm.SVC(kernel='linear', C=1).fit(X_train, y_train)
     print(clf.score(X_test, y_test))
-elif algorithm == 'linear':
+elif algorithm == 'logistic':
     X_train, X_test, y_train, y_test = train_test_split(all_x, all_y, test_size=0.2, random_state=0)
-    regr = linear_model.LinearRegression().fit(X_train, y_train)
-    y_predict = regr.predict(X_test)
-    # The mean squared error
-    print("Mean squared error: %.2f" % mean_squared_error(y_test, y_predict))
-    # Explained variance score: 1 is perfect prediction
-    print('Variance score: %.2f' % r2_score(y_test, y_pred))
+    clf = linear_model.LogisticRegression(random_state=0, solver='lbfgs', multi_class='multinomial', max_iter=1000).fit(X_train, y_train)
+    print('Score:', clf.score(X_test, y_test))    
