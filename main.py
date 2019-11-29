@@ -1,5 +1,5 @@
 from sklearn.model_selection import train_test_split
-from sklearn import svm
+from sklearn import svm, linear_model
 import numpy as np
 import csv
 import sys
@@ -33,3 +33,7 @@ if algorithm == 'SVC':
     X_train, X_test, y_train, y_test = train_test_split(all_x, all_y, test_size=0.2, random_state=0)
     clf = svm.SVC(kernel='linear', C=1).fit(X_train, y_train)
     print(clf.score(X_test, y_test))
+elif algorithm == 'linear':
+    X_train, X_test, y_train, y_test = train_test_split(all_x, all_y, test_size=0.2, random_state=0)
+    regr = linear_model.LinearRegression().fit(X_train, y_train)
+    print('Linear Regression Score:', regr.score(X_test, y_test))
