@@ -1,7 +1,6 @@
 from sklearn.model_selection import train_test_split
 from sklearn import svm
-import numpy as np 
-import xlrd
+import numpy as np
 import csv
 import sys
 
