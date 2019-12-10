@@ -143,7 +143,7 @@ if algorithm == 'SVC':
         {'kernel': ['rbf'], 'gamma': [1e-3, 'scale', 'auto'],'C': [1, 10, 100, 1000]},
         {'kernel': ['linear'], 'C': [1, 10, 100, 1000]}
         ]
-    clf = GridSearchCV(SVC(), tuned_parameters)
+    clf = GridSearchCV(SVC(), tuned_parameters, n_jobs=-1)
     clf.fit(X_train, y_train)
 
     print("Best parameters set found on development set:\n")
