@@ -4,12 +4,15 @@ from sklearn.model_selection import GridSearchCV
 from sklearn.metrics import classification_report
 from sklearn.metrics import accuracy_score
 from sklearn import svm, linear_model
+from sklearn.svm import SVC
 import numpy as np
 import time
 import csv
 import sys
 
 start_time = time.time()
+
+print('ECSE 689 Machine Learnng')
 
 data_location = sys.argv[1]
 row_offset = int(sys.argv[2]) - 1 # number of beginning rows to skip over
@@ -86,10 +89,9 @@ poutcome = {
 
 #Marketting to 
 
-print('ECSE 689 Machine Learnng')
-
 all_x = []
 all_y = []
+scores = ['precision', 'recall']
 
 with open(data_location) as csv_data:
     csv_reader = csv.reader(csv_data, delimiter=',')
@@ -137,8 +139,30 @@ for i in range(10):
 X_train, X_test, y_train, y_test = train_test_split(all_x, all_y, test_size=0.2, random_state=0)
 
 if algorithm == 'SVC':
-    clf = svm.SVC(kernel='linear', C=1).fit(X_train, y_train)
-    print(clf.score(X_test, y_test))
+    tuned_parameters = [
+        {'kernel': ['rbf'], 'gamma': [1e-3, 'scale', 'auto'],'C': [1, 10, 100, 1000]},
+        {'kernel': ['linear'], 'C': [1, 10, 100, 1000]}
+        ]
+    clf = GridSearchCV(SVC, tuned_parameters, n_jobs=-1)
+    clf.fit(X_train, y_train)
+
+    print("Best parameters set found on development set:\n")
+    print(clf.best_params_)
+    print()
+    print("Grid scores on development set:\n")
+    means = clf.cv_results_['mean_test_score']
+    stds = clf.cv_results_['std_test_score']
+    for mean, std, params in zip(means, stds, clf.cv_results_['params']):
+        print("%0.3f (+/-%0.03f) for %r"
+              % (mean, std * 2, params))
+    print()
+
+    print("Detailed classification report:\n")
+    print("The model is trained on the full development set.")
+    print("The scores are computed on the full evaluation set.\n")
+    y_true, y_pred = y_test, clf.predict(X_test)
+    print(classification_report(y_true, y_pred))
+    print()
 elif algorithm == 'logistic':
     clf = linear_model.LogisticRegression(random_state=0, solver='lbfgs', multi_class='multinomial', max_iter=1000).fit(X_train, y_train)
     print('Score:', clf.score(X_test, y_test))
