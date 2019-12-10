@@ -172,8 +172,8 @@ if algorithm == 'SVC':
 elif algorithm == 'logistic':
     print('You Choose Logistic')
     tuned_parameters = [
-        {'penalty': ['l2', 'none'], 'random_state': [0], 'C': [1, 10, 100], 'solver': ['lbfgs'], 'max_iter': [100, 100000], 'multi_class': ['multinomial', 'ovr']},
-        {'penalty': ['l2'], 'random_state': [0], 'C': [1, 10, 100], 'solver': ['liblinear'], 'max_iter': [100, 100000], 'multi_class': ['multinomial', 'ovr']}
+        {'penalty': ['l2', 'none'], 'random_state': [0], 'C': [1, 10, 100], 'solver': ['lbfgs'], 'max_iter': [100000], 'multi_class': ['multinomial', 'ovr']},
+        {'penalty': ['l2'], 'random_state': [0], 'C': [1, 10, 100], 'solver': ['liblinear'], 'max_iter': [100000], 'multi_class': ['multinomial', 'ovr']}
     ]
     machine_learning(LogisticRegression(), tuned_parameters)
 else:
