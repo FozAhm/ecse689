@@ -5,6 +5,7 @@ from sklearn.metrics import classification_report
 from sklearn.metrics import accuracy_score
 from sklearn import svm, linear_model
 from sklearn.svm import SVC
+from sklearn.linear_model import LogisticRegression
 import numpy as np
 import time
 import csv
@@ -170,8 +171,13 @@ if algorithm == 'SVC':
     machine_learning(SVC(), tuned_parameters)
 elif algorithm == 'logistic':
     print('You Choose Logistic')
-    clf = linear_model.LogisticRegression(random_state=0, solver='lbfgs', multi_class='multinomial', max_iter=1000).fit(X_train, y_train)
-    print('Score:', clf.score(X_test, y_test))
+    tuned_parameters = [
+        {'penalty': ['l2', ‘'none'], 'random_state': [0], 'C': [1, 10, 100, 1000], 'solver': ['newton-cg', 'lbfgs', 'sag', 'saga'], 'max_iter': [100, 500, 1000]},
+        {'penalty': ['l1'], 'random_state': [0], 'C': [1, 10, 100, 1000], 'solver': ['liblinear', 'saga'], [100, 500, 1000]}
+        {'penalty': ['l2'], 'random_state': [0], 'C': [1, 10, 100, 1000], 'solver': ['liblinear'], [100, 500, 1000]}
+        {'penalty': ['elasticnet'], 'random_state': [0], 'C': [1, 10, 100, 1000], 'solver': ['saga'], [100, 500, 1000]}
+    ]
+    machine_learning(LogisticRegression(), tuned_parameters)
 else:
     print('Machine Learning Algorithm Wrong')
 
