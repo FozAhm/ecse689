@@ -172,10 +172,10 @@ if algorithm == 'SVC':
 elif algorithm == 'logistic':
     print('You Choose Logistic')
     tuned_parameters = [
-        {'penalty': ['l2', ‘'none'], 'random_state': [0], 'C': [1, 10, 100, 1000], 'solver': ['newton-cg', 'lbfgs', 'sag', 'saga'], 'max_iter': [100, 500, 1000]},
-        {'penalty': ['l1'], 'random_state': [0], 'C': [1, 10, 100, 1000], 'solver': ['liblinear', 'saga'], [100, 500, 1000]}
-        {'penalty': ['l2'], 'random_state': [0], 'C': [1, 10, 100, 1000], 'solver': ['liblinear'], [100, 500, 1000]}
-        {'penalty': ['elasticnet'], 'random_state': [0], 'C': [1, 10, 100, 1000], 'solver': ['saga'], [100, 500, 1000]}
+        {'penalty': ['l2', 'none'], 'random_state': [0], 'C': [1, 10, 100, 1000], 'solver': ['newton-cg', 'lbfgs', 'sag', 'saga'], 'max_iter': [100, 500, 1000]},
+        {'penalty': ['l1'], 'random_state': [0], 'C': [1, 10, 100, 1000], 'solver': ['liblinear', 'saga'], 'max_iter': [100, 500, 1000]},
+        {'penalty': ['l2'], 'random_state': [0], 'C': [1, 10, 100, 1000], 'solver': ['liblinear'], 'max_iter': [100, 500, 1000]},
+        {'penalty': ['elasticnet'], 'random_state': [0], 'C': [1, 10, 100, 1000], 'solver': ['saga'], 'max_iter': [100, 500, 1000]}
     ]
     machine_learning(LogisticRegression(), tuned_parameters)
 else:
