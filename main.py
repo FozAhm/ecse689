@@ -4,7 +4,6 @@ from sklearn.model_selection import GridSearchCV
 from sklearn.metrics import classification_report
 from sklearn.metrics import accuracy_score
 from sklearn import svm, linear_model
-from sklearn.svm import SVC
 import numpy as np
 import time
 import csv
@@ -143,7 +142,7 @@ if algorithm == 'SVC':
         {'kernel': ['rbf'], 'gamma': [1e-3, 'scale', 'auto'],'C': [1, 10, 100, 1000]},
         {'kernel': ['linear'], 'C': [1, 10, 100, 1000]}
         ]
-    clf = GridSearchCV(SVC, tuned_parameters, n_jobs=-1)
+    clf = GridSearchCV(svm.SVC, tuned_parameters, n_jobs=-1)
     clf.fit(X_train, y_train)
 
     print("Best parameters set found on development set:\n")
