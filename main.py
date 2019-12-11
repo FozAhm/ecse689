@@ -12,7 +12,7 @@ import time
 import csv
 import sys
 
-def machine_learning(method, tuned_parameters):
+def machine_learning(method, tuned_parameters, X_train, X_test, y_train, y_test):
     clf = GridSearchCV(method, tuned_parameters, n_jobs=-1)
     clf.fit(X_train, y_train)
 
@@ -36,7 +36,7 @@ def machine_learning(method, tuned_parameters):
 
     return clf
 
-def transfer_learning(clf):
+def transfer_learning(clf, other_x, other_y):
     print('Using Previously trained model on new data')
     y_true, y_pred = other_y, clf.predict(other_x)
     print('Normalized Mutual Info Score:', normalized_mutual_info_score(y_true, y_pred), '\n')
@@ -247,13 +247,15 @@ if row_count2 > 0:
 
 X_train, X_test, y_train, y_test = train_test_split(all_x, all_y, test_size=0.2, random_state=0)
 
+clf = LogisticRegression()
+
 if algorithm == 'svm':
     print('You Choose Support Vector Machines')
     tuned_parameters = [
         {'kernel': ['rbf'], 'gamma': [1e-3, 'scale', 'auto'],'C': [1, 10, 100, 1000]},
         {'kernel': ['linear'], 'C': [1, 10, 100, 1000]}
         ]
-    clf = machine_learning(SVC(), tuned_parameters)
+    clf = machine_learning(SVC(), tuned_parameters, X_train, X_test, y_train, y_test)
 elif algorithm == 'log':
     print('You Choose Logistic Regression')
     tuned_parameters = [
@@ -261,30 +263,30 @@ elif algorithm == 'log':
         {'penalty': ['none'], 'random_state': [0], 'solver': ['lbfgs'], 'max_iter': [100000], 'multi_class': ['multinomial', 'ovr']},
         {'penalty': ['l2'], 'random_state': [0], 'C': [1, 10, 100], 'solver': ['liblinear'], 'max_iter': [100000], 'multi_class': ['ovr']}
     ]
-    clf = machine_learning(LogisticRegression(), tuned_parameters)
+    clf = machine_learning(LogisticRegression(), tuned_parameters, X_train, X_test, y_train, y_test)
 elif algorithm == 'tree':
     print('You Choose Decision Tree')
     tuned_parameters = [
         {'criterion': ['gini', 'entropy'], 'splitter': ['best', 'random'], 'min_samples_split': [2, 10, 40], 'min_samples_leaf': [1, 3, 5], 'max_depth': [10, 20, None]}
     ]
-    clf = machine_learning(DecisionTreeClassifier(), tuned_parameters)
+    clf = machine_learning(DecisionTreeClassifier(), tuned_parameters, X_train, X_test, y_train, y_test)
 elif algorithm == 'neural':
     print('You Choose MLP Neural Networks')
     tuned_parameters = [
         {'hidden_layer_sizes': [(5,3), (100,), (100, 50)], 'activation': ['logistic', 'tanh', 'relu'], 'solver': ['lbfgs', 'sgd', 'adam'], 'max_iter': [1000], 'alpha': [1e-4, 1e-5]}
         #{'hidden_layer_sizes': [(100,)], 'activation': ['relu'], 'solver': ['adam'], 'max_iter': [1000]}
     ]
-    clf = machine_learning(MLPClassifier(), tuned_parameters)
+    clf = machine_learning(MLPClassifier(), tuned_parameters, X_train, X_test, y_train, y_test)
 elif algorithm == 'bayes':
     print('You Choose Gaussian Naive Bayes')
     tuned_parameters = [
         {'var_smoothing': [1e-6, 1e-9, 1e-12, 1e-15, 1e-18, 1e-20]}
     ]
-    clf = machine_learning(GaussianNB(), tuned_parameters)
+    clf = machine_learning(GaussianNB(), tuned_parameters, X_train, X_test, y_train, y_test)
 else:
     print('Machine Learning Algorithm Not Available')
 
 if data_type == 'default-market' or data_type == 'market-default':
-    transfer_learning(clf)
+    transfer_learning(clf, other_x, other_y)
 
 print("--- Total Program Execution Time ---\n--- %s seconds ---" % (time.time() - start_time))
