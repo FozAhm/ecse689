@@ -183,7 +183,7 @@ elif algorithm == 'logistic':
 elif algorithm == 'tree':
     print('You Choose Decision Tree')
     tuned_parameters = [
-        {'criterion': ['gini', 'entropy'], 'splitter': ['best', 'random'], 'min_samples_split': [2, 10, 40]}
+        {'criterion': ['gini', 'entropy'], 'splitter': ['best', 'random'], 'min_samples_split': [2, 10, 40], 'min_samples_leaf': [1, 3, 5], 'max_depth': [10, 20, None]}
     ]
     machine_learning(DecisionTreeClassifier(), tuned_parameters)
 elif algorithm == 'neural':
