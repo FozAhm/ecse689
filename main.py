@@ -190,7 +190,7 @@ elif algorithm == 'tree':
 elif algorithm == 'neural':
     print('You Choose MLP Neural Networks')
     tuned_parameters = [
-        {'hidden_layer_sizes': [(5,3), (100,), (100, 50)], 'activation': ['identity', 'logistic', 'tanh', 'relu'], 'solver': ['lbfgs', 'sgd', 'adam'], 'max_iter': [1000]}
+        {'hidden_layer_sizes': [(5,3), (100,), (100, 50), (200, 100), (300, 200, 100)], 'activation': ['identity', 'logistic', 'tanh', 'relu'], 'solver': ['lbfgs', 'sgd', 'adam'], 'max_iter': [1000], 'alpha': [1e-4, 1e-5, 1e-9]}
         #{'hidden_layer_sizes': [(100,)], 'activation': ['relu'], 'solver': ['adam'], 'max_iter': [1000]}
     ]
     machine_learning(MLPClassifier(), tuned_parameters)
