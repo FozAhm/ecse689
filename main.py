@@ -44,6 +44,8 @@ row_stop = int(sys.argv[3])
 data_type = sys.argv[4]
 algorithm = sys.argv[5]
 
+print('Data Being Analyzed:', data_location.split('/')[-1])
+
 # Marketing Data Keys
 binary = {
     'no': 0,
