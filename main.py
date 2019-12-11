@@ -2,6 +2,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.model_selection import GridSearchCV
 from sklearn.metrics import classification_report
 from sklearn.linear_model import LogisticRegression
+from sklearn.neural_network import MLPClassifier
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.naive_bayes import GaussianNB
 from sklearn.svm import SVC
@@ -188,10 +189,14 @@ elif algorithm == 'tree':
     machine_learning(DecisionTreeClassifier(), tuned_parameters)
 elif algorithm == 'neural':
     print('You Choose MLP Neural Networks')
+    tuned_parameters = [
+
+    ]
+    machine_learning(MLPClassifier(), tuned_parameters)
 elif algorithm == 'bayes':
     print('You Choose Gaussian Naive Bayes')
     tuned_parameters = [
-
+        {'var_smoothing': [1e-6, 1e-9, 1e-12]}
     ]
     machine_learning(GaussianNB(), tuned_parameters)
 else:
