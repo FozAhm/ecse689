@@ -12,7 +12,7 @@ import csv
 import sys
 
 def machine_learning(method, tuned_parameters):
-    clf = GridSearchCV(method, tuned_parameters, n_jobs=70)
+    clf = GridSearchCV(method, tuned_parameters, n_jobs=-1)
     clf.fit(X_train, y_train)
 
     print("Best parameters set found on development set:\n")
@@ -32,7 +32,12 @@ def machine_learning(method, tuned_parameters):
     y_true, y_pred = y_test, clf.predict(X_test)
     print(classification_report(y_true, y_pred))
     print()
-    
+
+    return clf
+
+def transfer_learning(clf):
+    print('Using Previously trained model on new data')
+
 
 start_time = time.time()
 
@@ -190,7 +195,7 @@ elif algorithm == 'tree':
 elif algorithm == 'neural':
     print('You Choose MLP Neural Networks')
     tuned_parameters = [
-        {'hidden_layer_sizes': [(5,3), (100,), (100, 50)], 'activation': ['logistic', 'tanh', 'relu'], 'solver': ['lbfgs', 'sgd', 'adam'], 'max_iter': [1000], 'alpha': [1e-3, 1e-4, 1e-5]}
+        {'hidden_layer_sizes': [(5,3), (100,), (100, 50)], 'activation': ['logistic', 'tanh', 'relu'], 'solver': ['lbfgs', 'sgd', 'adam'], 'max_iter': [1000], 'alpha': [1e-4, 1e-5]}
         #{'hidden_layer_sizes': [(100,)], 'activation': ['relu'], 'solver': ['adam'], 'max_iter': [1000]}
     ]
     machine_learning(MLPClassifier(), tuned_parameters)
