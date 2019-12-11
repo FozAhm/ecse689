@@ -12,7 +12,7 @@ import csv
 import sys
 
 def machine_learning(method, tuned_parameters):
-    clf = GridSearchCV(method, tuned_parameters, n_jobs=-1)
+    clf = GridSearchCV(method, tuned_parameters, n_jobs=70)
     clf.fit(X_train, y_train)
 
     print("Best parameters set found on development set:\n")
