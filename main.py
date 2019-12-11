@@ -139,6 +139,7 @@ education_transfer = {
 }
 
 martial_transfer = {
+    '0': 3
     '1': 1,
     '2': 2,
     '3': 3,
