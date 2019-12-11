@@ -125,6 +125,8 @@ education_transfer = {
     '2': 6,
     '3': 3,
     '4': 7,
+    '5': 7,
+    '6': 7,
     'basic.4y': 4,
     'basic.6y': 4,
     'basic.9y': 4,
