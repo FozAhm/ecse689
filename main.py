@@ -202,35 +202,36 @@ with open(data_location) as csv_data:
 
                 all_x.append([values[0], values[2], values[3]])
                 all_y.append(values[20])
-
-                with open(data_location2) as csv_data2:
-                    csv_reader2 = csv.reader(csv_data2, delimiter=',')
-                    for row2 in csv_reader2:
-                        if row_count2 > 2:
-                            print(row_count2)
-                            other_x.append([int(row2[5]), martial_transfer[row2[4]], education_transfer[row2[3]]])
-                            other_y.append(int(row2[24]))
-                        row_count2 += 1
             elif data_type == 'default-market':
                 all_x.append([int(row[3]), int(row[4]), int(row[5])])
-                all_y.append(int(row[24]))
-
-                with open(data_location2) as csv_data2:
-                    csv_reader2 = csv.reader(csv_data2, delimiter=',')
-                    for row2 in csv_reader2:
-                        if row_count2 > 1:
-                            values = [s.replace('"', '') for s in row2[0].split(';')]
-
-                            values[0] = int(values[0])
-                            values[2] = martial_transfer[values[2]]
-                            values[3] = education_transfer[values[3]]
-                            values[20] = binary[values[20]]
-
-                            other_x.append([values[3], values[2], values[0]])
-                            other_y.append(values[20])
-                            
-                        row_count2 += 1
+                all_y.append(int(row[24]))      
         row_count += 1
+
+if data_type == 'market-default':
+    with open(data_location2) as csv_data2:
+        csv_reader2 = csv.reader(csv_data2, delimiter=',')
+        for row2 in csv_reader2:
+            if row_count2 > 2:
+                print(row_count2)
+                other_x.append([int(row2[5]), martial_transfer[row2[4]], education_transfer[row2[3]]])
+                other_y.append(int(row2[24]))
+            row_count2 += 1
+elif data_type == 'default-market':
+    with open(data_location2) as csv_data2:
+        csv_reader2 = csv.reader(csv_data2, delimiter=',')
+        for row2 in csv_reader2:
+            if row_count2 > 1:
+                values = [s.replace('"', '') for s in row2[0].split(';')]
+
+                values[0] = int(values[0])
+                values[2] = martial_transfer[values[2]]
+                values[3] = education_transfer[values[3]]
+                values[20] = binary[values[20]]
+
+                other_x.append([values[3], values[2], values[0]])
+                other_y.append(values[20])
+                
+            row_count2 += 1
 
 print('Number of Rows in Training Data:', row_count)
 for i in range(10):
