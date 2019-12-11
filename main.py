@@ -196,7 +196,7 @@ elif algorithm == 'neural':
 elif algorithm == 'bayes':
     print('You Choose Gaussian Naive Bayes')
     tuned_parameters = [
-        {'var_smoothing': [1e-6, 1e-9, 1e-12, 1e-15, 1e-18, 1e-20]}
+        {'var_smoothing': [1e-6, 1e-9, 1e-12]}
     ]
     machine_learning(GaussianNB(), tuned_parameters)
 else:
