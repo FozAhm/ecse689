@@ -121,6 +121,7 @@ poutcome = {
 
 #Transfer Keys
 education_transfer = {
+    '0': 7,
     '1': 6,
     '2': 6,
     '3': 3,
