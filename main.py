@@ -1,3 +1,4 @@
+from sklearn.metrics.cluster import normalized_mutual_info_score
 from sklearn.model_selection import train_test_split
 from sklearn.model_selection import GridSearchCV
 from sklearn.metrics import classification_report
@@ -37,6 +38,8 @@ def machine_learning(method, tuned_parameters):
 
 def transfer_learning(clf):
     print('Using Previously trained model on new data')
+    y_true, y_pred = other_y, clf.predict(other_x)
+    print('NMI:', normalized_mutual_info_score(y_true, y_pred), '\n')
 
 
 start_time = time.time()
@@ -51,6 +54,7 @@ algorithm = sys.argv[5]
 data_location2 = sys.argv[6]
 
 print('Data Being Analyzed:', data_location.split('/')[-1])
+print('Transfer Data Being Analyzed:', data_location2.split('/')[-1])
 
 # Marketing Data Keys
 binary = {
@@ -249,7 +253,7 @@ if algorithm == 'SVC':
         {'kernel': ['rbf'], 'gamma': [1e-3, 'scale', 'auto'],'C': [1, 10, 100, 1000]},
         {'kernel': ['linear'], 'C': [1, 10, 100, 1000]}
         ]
-    machine_learning(SVC(), tuned_parameters)
+    clf = machine_learning(SVC(), tuned_parameters)
 elif algorithm == 'logistic':
     print('You Choose Logistic')
     tuned_parameters = [
@@ -257,27 +261,30 @@ elif algorithm == 'logistic':
         {'penalty': ['none'], 'random_state': [0], 'solver': ['lbfgs'], 'max_iter': [100000], 'multi_class': ['multinomial', 'ovr']},
         {'penalty': ['l2'], 'random_state': [0], 'C': [1, 10, 100], 'solver': ['liblinear'], 'max_iter': [100000], 'multi_class': ['ovr']}
     ]
-    machine_learning(LogisticRegression(), tuned_parameters)
+    clf = machine_learning(LogisticRegression(), tuned_parameters)
 elif algorithm == 'tree':
     print('You Choose Decision Tree')
     tuned_parameters = [
         {'criterion': ['gini', 'entropy'], 'splitter': ['best', 'random'], 'min_samples_split': [2, 10, 40], 'min_samples_leaf': [1, 3, 5], 'max_depth': [10, 20, None]}
     ]
-    machine_learning(DecisionTreeClassifier(), tuned_parameters)
+    clf = machine_learning(DecisionTreeClassifier(), tuned_parameters)
 elif algorithm == 'neural':
     print('You Choose MLP Neural Networks')
     tuned_parameters = [
         {'hidden_layer_sizes': [(5,3), (100,), (100, 50)], 'activation': ['logistic', 'tanh', 'relu'], 'solver': ['lbfgs', 'sgd', 'adam'], 'max_iter': [1000], 'alpha': [1e-4, 1e-5]}
         #{'hidden_layer_sizes': [(100,)], 'activation': ['relu'], 'solver': ['adam'], 'max_iter': [1000]}
     ]
-    machine_learning(MLPClassifier(), tuned_parameters)
+    clf = machine_learning(MLPClassifier(), tuned_parameters)
 elif algorithm == 'bayes':
     print('You Choose Gaussian Naive Bayes')
     tuned_parameters = [
         {'var_smoothing': [1e-6, 1e-9, 1e-12, 1e-15, 1e-18, 1e-20]}
     ]
-    machine_learning(GaussianNB(), tuned_parameters)
+    clf = machine_learning(GaussianNB(), tuned_parameters)
 else:
     print('Machine Learning Algorithm Not Available')
+
+if data_type == 'default-market' or data_type == 'market-default':
+    transfer_learning(clf)
 
 print("--- Total Program Execution Time ---\n--- %s seconds ---" % (time.time() - start_time))
