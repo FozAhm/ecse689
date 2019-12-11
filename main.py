@@ -177,7 +177,7 @@ elif algorithm == 'logistic':
     tuned_parameters = [
         {'penalty': ['l2'], 'random_state': [0], 'C': [1, 10, 100], 'solver': ['lbfgs'], 'max_iter': [100000], 'multi_class': ['multinomial', 'ovr']},
         {'penalty': ['none'], 'random_state': [0], 'solver': ['lbfgs'], 'max_iter': [100000], 'multi_class': ['multinomial', 'ovr']},
-        {'penalty': ['l2'], 'random_state': [0], 'C': [1, 10, 100], 'solver': ['liblinear'], 'max_iter': [100000], 'multi_class': ['multinomial', 'ovr']}
+        {'penalty': ['l2'], 'random_state': [0], 'C': [1, 10, 100], 'solver': ['liblinear'], 'max_iter': [100000], 'multi_class': ['ovr']}
     ]
     machine_learning(LogisticRegression(), tuned_parameters)
 elif algorithm == 'tree':
