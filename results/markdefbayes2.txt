@@ -50,10 +50,20 @@ The scores are computed on the full evaluation set.
     accuracy                           0.89      8238
    macro avg       0.71      0.52      0.51      8238
 weighted avg       0.85      0.89      0.84      8238
-
+ 
 
 Using Previously trained model on new data
 Normalized Mutual Info Score: 9.899945795659466e-05 
 
+              precision    recall  f1-score   support
+
+           0       0.78      1.00      0.88     23364
+           1       0.33      0.00      0.00      6635
+
+    accuracy                           0.78     29999
+   macro avg       0.56      0.50      0.44     29999
+weighted avg       0.68      0.78      0.68     29999
+ 
+
 --- Total Program Execution Time ---
---- 8.639935493469238 seconds ---
+--- 8.690224409103394 seconds ---

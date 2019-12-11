@@ -1,0 +1,74 @@
+ECSE 689 Machine Learnng
+Data Being Analyzed: default_of_credit_card_clients.csv
+Transfer Data Being Analyzed: bank-additional-full.csv
+Number of Rows in Training Data: 30002
+Sample: 1 ,Feautures: [2, 1, 24] ,Target: 1
+Sample: 2 ,Feautures: [2, 2, 26] ,Target: 1
+Sample: 3 ,Feautures: [2, 2, 34] ,Target: 0
+Sample: 4 ,Feautures: [2, 1, 37] ,Target: 0
+Sample: 5 ,Feautures: [2, 1, 57] ,Target: 0
+Sample: 6 ,Feautures: [1, 2, 37] ,Target: 0
+Sample: 7 ,Feautures: [1, 2, 29] ,Target: 0
+Sample: 8 ,Feautures: [2, 2, 23] ,Target: 0
+Sample: 9 ,Feautures: [3, 1, 28] ,Target: 0
+Sample: 10 ,Feautures: [3, 2, 35] ,Target: 0
+Number of Rows in Transfer Data: 41189
+Sample: 1 ,Feautures: [3, 1, 57] ,Target: 0
+Sample: 2 ,Feautures: [3, 1, 37] ,Target: 0
+Sample: 3 ,Feautures: [4, 1, 40] ,Target: 0
+Sample: 4 ,Feautures: [3, 1, 56] ,Target: 0
+Sample: 5 ,Feautures: [4, 1, 45] ,Target: 0
+Sample: 6 ,Feautures: [4, 1, 59] ,Target: 0
+Sample: 7 ,Feautures: [4, 1, 41] ,Target: 0
+Sample: 8 ,Feautures: [4, 2, 24] ,Target: 0
+Sample: 9 ,Feautures: [3, 2, 25] ,Target: 0
+Sample: 10 ,Feautures: [4, 1, 41] ,Target: 0
+You Choose Logistic Regression
+Best parameters set found on development set:
+
+{'C': 1, 'max_iter': 100000, 'multi_class': 'multinomial', 'penalty': 'l2', 'random_state': 0, 'solver': 'lbfgs'}
+
+Grid scores on development set:
+
+0.778 (+/-0.000) for {'C': 1, 'max_iter': 100000, 'multi_class': 'multinomial', 'penalty': 'l2', 'random_state': 0, 'solver': 'lbfgs'}
+0.778 (+/-0.000) for {'C': 1, 'max_iter': 100000, 'multi_class': 'ovr', 'penalty': 'l2', 'random_state': 0, 'solver': 'lbfgs'}
+0.778 (+/-0.000) for {'C': 10, 'max_iter': 100000, 'multi_class': 'multinomial', 'penalty': 'l2', 'random_state': 0, 'solver': 'lbfgs'}
+0.778 (+/-0.000) for {'C': 10, 'max_iter': 100000, 'multi_class': 'ovr', 'penalty': 'l2', 'random_state': 0, 'solver': 'lbfgs'}
+0.778 (+/-0.000) for {'C': 100, 'max_iter': 100000, 'multi_class': 'multinomial', 'penalty': 'l2', 'random_state': 0, 'solver': 'lbfgs'}
+0.778 (+/-0.000) for {'C': 100, 'max_iter': 100000, 'multi_class': 'ovr', 'penalty': 'l2', 'random_state': 0, 'solver': 'lbfgs'}
+0.778 (+/-0.000) for {'max_iter': 100000, 'multi_class': 'multinomial', 'penalty': 'none', 'random_state': 0, 'solver': 'lbfgs'}
+0.778 (+/-0.000) for {'max_iter': 100000, 'multi_class': 'ovr', 'penalty': 'none', 'random_state': 0, 'solver': 'lbfgs'}
+0.778 (+/-0.000) for {'C': 1, 'max_iter': 100000, 'multi_class': 'ovr', 'penalty': 'l2', 'random_state': 0, 'solver': 'liblinear'}
+0.778 (+/-0.000) for {'C': 10, 'max_iter': 100000, 'multi_class': 'ovr', 'penalty': 'l2', 'random_state': 0, 'solver': 'liblinear'}
+0.778 (+/-0.000) for {'C': 100, 'max_iter': 100000, 'multi_class': 'ovr', 'penalty': 'l2', 'random_state': 0, 'solver': 'liblinear'}
+
+Detailed classification report:
+
+The model is trained on the full development set.
+The scores are computed on the full evaluation set.
+
+              precision    recall  f1-score   support
+
+           0       0.78      1.00      0.88      4703
+           1       0.00      0.00      0.00      1297
+
+    accuracy                           0.78      6000
+   macro avg       0.39      0.50      0.44      6000
+weighted avg       0.61      0.78      0.69      6000
+ 
+
+Using Previously trained model on new data
+Normalized Mutual Info Score: -8.98814227677595e-15 
+
+              precision    recall  f1-score   support
+
+           0       0.89      1.00      0.94     36547
+           1       0.00      0.00      0.00      4640
+
+    accuracy                           0.89     41187
+   macro avg       0.44      0.50      0.47     41187
+weighted avg       0.79      0.89      0.83     41187
+ 
+
+--- Total Program Execution Time ---
+--- 11.705784797668457 seconds ---

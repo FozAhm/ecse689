@@ -26,7 +26,7 @@ Sample: 10 ,Feautures: [34, 2, 3] ,Target: 0
 You Choose MLP Neural Networks
 Best parameters set found on development set:
 
-{'activation': 'relu', 'alpha': 0.0001, 'hidden_layer_sizes': (100, 50), 'max_iter': 1000, 'solver': 'lbfgs'}
+{'activation': 'logistic', 'alpha': 0.0001, 'hidden_layer_sizes': (100, 50), 'max_iter': 1000, 'solver': 'adam'}
 
 Grid scores on development set:
 
@@ -38,52 +38,52 @@ Grid scores on development set:
 0.887 (+/-0.000) for {'activation': 'logistic', 'alpha': 0.0001, 'hidden_layer_sizes': (100,), 'max_iter': 1000, 'solver': 'adam'}
 0.887 (+/-0.001) for {'activation': 'logistic', 'alpha': 0.0001, 'hidden_layer_sizes': (100, 50), 'max_iter': 1000, 'solver': 'lbfgs'}
 0.887 (+/-0.000) for {'activation': 'logistic', 'alpha': 0.0001, 'hidden_layer_sizes': (100, 50), 'max_iter': 1000, 'solver': 'sgd'}
-0.887 (+/-0.001) for {'activation': 'logistic', 'alpha': 0.0001, 'hidden_layer_sizes': (100, 50), 'max_iter': 1000, 'solver': 'adam'}
-0.887 (+/-0.000) for {'activation': 'logistic', 'alpha': 1e-05, 'hidden_layer_sizes': (5, 3), 'max_iter': 1000, 'solver': 'lbfgs'}
+0.887 (+/-0.002) for {'activation': 'logistic', 'alpha': 0.0001, 'hidden_layer_sizes': (100, 50), 'max_iter': 1000, 'solver': 'adam'}
+0.887 (+/-0.001) for {'activation': 'logistic', 'alpha': 1e-05, 'hidden_layer_sizes': (5, 3), 'max_iter': 1000, 'solver': 'lbfgs'}
 0.887 (+/-0.000) for {'activation': 'logistic', 'alpha': 1e-05, 'hidden_layer_sizes': (5, 3), 'max_iter': 1000, 'solver': 'sgd'}
 0.887 (+/-0.000) for {'activation': 'logistic', 'alpha': 1e-05, 'hidden_layer_sizes': (5, 3), 'max_iter': 1000, 'solver': 'adam'}
-0.887 (+/-0.002) for {'activation': 'logistic', 'alpha': 1e-05, 'hidden_layer_sizes': (100,), 'max_iter': 1000, 'solver': 'lbfgs'}
+0.887 (+/-0.001) for {'activation': 'logistic', 'alpha': 1e-05, 'hidden_layer_sizes': (100,), 'max_iter': 1000, 'solver': 'lbfgs'}
 0.887 (+/-0.000) for {'activation': 'logistic', 'alpha': 1e-05, 'hidden_layer_sizes': (100,), 'max_iter': 1000, 'solver': 'sgd'}
 0.887 (+/-0.000) for {'activation': 'logistic', 'alpha': 1e-05, 'hidden_layer_sizes': (100,), 'max_iter': 1000, 'solver': 'adam'}
 0.887 (+/-0.001) for {'activation': 'logistic', 'alpha': 1e-05, 'hidden_layer_sizes': (100, 50), 'max_iter': 1000, 'solver': 'lbfgs'}
 0.887 (+/-0.000) for {'activation': 'logistic', 'alpha': 1e-05, 'hidden_layer_sizes': (100, 50), 'max_iter': 1000, 'solver': 'sgd'}
-0.887 (+/-0.002) for {'activation': 'logistic', 'alpha': 1e-05, 'hidden_layer_sizes': (100, 50), 'max_iter': 1000, 'solver': 'adam'}
+0.887 (+/-0.001) for {'activation': 'logistic', 'alpha': 1e-05, 'hidden_layer_sizes': (100, 50), 'max_iter': 1000, 'solver': 'adam'}
 0.887 (+/-0.000) for {'activation': 'tanh', 'alpha': 0.0001, 'hidden_layer_sizes': (5, 3), 'max_iter': 1000, 'solver': 'lbfgs'}
 0.887 (+/-0.000) for {'activation': 'tanh', 'alpha': 0.0001, 'hidden_layer_sizes': (5, 3), 'max_iter': 1000, 'solver': 'sgd'}
-0.887 (+/-0.000) for {'activation': 'tanh', 'alpha': 0.0001, 'hidden_layer_sizes': (5, 3), 'max_iter': 1000, 'solver': 'adam'}
-0.887 (+/-0.001) for {'activation': 'tanh', 'alpha': 0.0001, 'hidden_layer_sizes': (100,), 'max_iter': 1000, 'solver': 'lbfgs'}
+0.887 (+/-0.001) for {'activation': 'tanh', 'alpha': 0.0001, 'hidden_layer_sizes': (5, 3), 'max_iter': 1000, 'solver': 'adam'}
+0.887 (+/-0.002) for {'activation': 'tanh', 'alpha': 0.0001, 'hidden_layer_sizes': (100,), 'max_iter': 1000, 'solver': 'lbfgs'}
 0.887 (+/-0.000) for {'activation': 'tanh', 'alpha': 0.0001, 'hidden_layer_sizes': (100,), 'max_iter': 1000, 'solver': 'sgd'}
 0.887 (+/-0.000) for {'activation': 'tanh', 'alpha': 0.0001, 'hidden_layer_sizes': (100,), 'max_iter': 1000, 'solver': 'adam'}
 0.887 (+/-0.001) for {'activation': 'tanh', 'alpha': 0.0001, 'hidden_layer_sizes': (100, 50), 'max_iter': 1000, 'solver': 'lbfgs'}
 0.887 (+/-0.000) for {'activation': 'tanh', 'alpha': 0.0001, 'hidden_layer_sizes': (100, 50), 'max_iter': 1000, 'solver': 'sgd'}
-0.887 (+/-0.000) for {'activation': 'tanh', 'alpha': 0.0001, 'hidden_layer_sizes': (100, 50), 'max_iter': 1000, 'solver': 'adam'}
-0.887 (+/-0.001) for {'activation': 'tanh', 'alpha': 1e-05, 'hidden_layer_sizes': (5, 3), 'max_iter': 1000, 'solver': 'lbfgs'}
+0.887 (+/-0.001) for {'activation': 'tanh', 'alpha': 0.0001, 'hidden_layer_sizes': (100, 50), 'max_iter': 1000, 'solver': 'adam'}
+0.887 (+/-0.000) for {'activation': 'tanh', 'alpha': 1e-05, 'hidden_layer_sizes': (5, 3), 'max_iter': 1000, 'solver': 'lbfgs'}
 0.887 (+/-0.000) for {'activation': 'tanh', 'alpha': 1e-05, 'hidden_layer_sizes': (5, 3), 'max_iter': 1000, 'solver': 'sgd'}
 0.887 (+/-0.000) for {'activation': 'tanh', 'alpha': 1e-05, 'hidden_layer_sizes': (5, 3), 'max_iter': 1000, 'solver': 'adam'}
-0.886 (+/-0.003) for {'activation': 'tanh', 'alpha': 1e-05, 'hidden_layer_sizes': (100,), 'max_iter': 1000, 'solver': 'lbfgs'}
+0.887 (+/-0.001) for {'activation': 'tanh', 'alpha': 1e-05, 'hidden_layer_sizes': (100,), 'max_iter': 1000, 'solver': 'lbfgs'}
 0.887 (+/-0.000) for {'activation': 'tanh', 'alpha': 1e-05, 'hidden_layer_sizes': (100,), 'max_iter': 1000, 'solver': 'sgd'}
 0.887 (+/-0.000) for {'activation': 'tanh', 'alpha': 1e-05, 'hidden_layer_sizes': (100,), 'max_iter': 1000, 'solver': 'adam'}
 0.887 (+/-0.001) for {'activation': 'tanh', 'alpha': 1e-05, 'hidden_layer_sizes': (100, 50), 'max_iter': 1000, 'solver': 'lbfgs'}
 0.887 (+/-0.000) for {'activation': 'tanh', 'alpha': 1e-05, 'hidden_layer_sizes': (100, 50), 'max_iter': 1000, 'solver': 'sgd'}
-0.887 (+/-0.002) for {'activation': 'tanh', 'alpha': 1e-05, 'hidden_layer_sizes': (100, 50), 'max_iter': 1000, 'solver': 'adam'}
+0.887 (+/-0.001) for {'activation': 'tanh', 'alpha': 1e-05, 'hidden_layer_sizes': (100, 50), 'max_iter': 1000, 'solver': 'adam'}
 0.887 (+/-0.000) for {'activation': 'relu', 'alpha': 0.0001, 'hidden_layer_sizes': (5, 3), 'max_iter': 1000, 'solver': 'lbfgs'}
 0.887 (+/-0.000) for {'activation': 'relu', 'alpha': 0.0001, 'hidden_layer_sizes': (5, 3), 'max_iter': 1000, 'solver': 'sgd'}
 0.887 (+/-0.000) for {'activation': 'relu', 'alpha': 0.0001, 'hidden_layer_sizes': (5, 3), 'max_iter': 1000, 'solver': 'adam'}
-0.887 (+/-0.000) for {'activation': 'relu', 'alpha': 0.0001, 'hidden_layer_sizes': (100,), 'max_iter': 1000, 'solver': 'lbfgs'}
+0.887 (+/-0.001) for {'activation': 'relu', 'alpha': 0.0001, 'hidden_layer_sizes': (100,), 'max_iter': 1000, 'solver': 'lbfgs'}
 0.887 (+/-0.000) for {'activation': 'relu', 'alpha': 0.0001, 'hidden_layer_sizes': (100,), 'max_iter': 1000, 'solver': 'sgd'}
-0.887 (+/-0.001) for {'activation': 'relu', 'alpha': 0.0001, 'hidden_layer_sizes': (100,), 'max_iter': 1000, 'solver': 'adam'}
+0.886 (+/-0.001) for {'activation': 'relu', 'alpha': 0.0001, 'hidden_layer_sizes': (100,), 'max_iter': 1000, 'solver': 'adam'}
 0.887 (+/-0.001) for {'activation': 'relu', 'alpha': 0.0001, 'hidden_layer_sizes': (100, 50), 'max_iter': 1000, 'solver': 'lbfgs'}
 0.887 (+/-0.000) for {'activation': 'relu', 'alpha': 0.0001, 'hidden_layer_sizes': (100, 50), 'max_iter': 1000, 'solver': 'sgd'}
-0.887 (+/-0.002) for {'activation': 'relu', 'alpha': 0.0001, 'hidden_layer_sizes': (100, 50), 'max_iter': 1000, 'solver': 'adam'}
+0.887 (+/-0.001) for {'activation': 'relu', 'alpha': 0.0001, 'hidden_layer_sizes': (100, 50), 'max_iter': 1000, 'solver': 'adam'}
 0.887 (+/-0.001) for {'activation': 'relu', 'alpha': 1e-05, 'hidden_layer_sizes': (5, 3), 'max_iter': 1000, 'solver': 'lbfgs'}
 0.887 (+/-0.000) for {'activation': 'relu', 'alpha': 1e-05, 'hidden_layer_sizes': (5, 3), 'max_iter': 1000, 'solver': 'sgd'}
 0.887 (+/-0.000) for {'activation': 'relu', 'alpha': 1e-05, 'hidden_layer_sizes': (5, 3), 'max_iter': 1000, 'solver': 'adam'}
 0.887 (+/-0.000) for {'activation': 'relu', 'alpha': 1e-05, 'hidden_layer_sizes': (100,), 'max_iter': 1000, 'solver': 'lbfgs'}
 0.887 (+/-0.000) for {'activation': 'relu', 'alpha': 1e-05, 'hidden_layer_sizes': (100,), 'max_iter': 1000, 'solver': 'sgd'}
 0.887 (+/-0.001) for {'activation': 'relu', 'alpha': 1e-05, 'hidden_layer_sizes': (100,), 'max_iter': 1000, 'solver': 'adam'}
-0.887 (+/-0.002) for {'activation': 'relu', 'alpha': 1e-05, 'hidden_layer_sizes': (100, 50), 'max_iter': 1000, 'solver': 'lbfgs'}
+0.887 (+/-0.000) for {'activation': 'relu', 'alpha': 1e-05, 'hidden_layer_sizes': (100, 50), 'max_iter': 1000, 'solver': 'lbfgs'}
 0.887 (+/-0.000) for {'activation': 'relu', 'alpha': 1e-05, 'hidden_layer_sizes': (100, 50), 'max_iter': 1000, 'solver': 'sgd'}
-0.887 (+/-0.001) for {'activation': 'relu', 'alpha': 1e-05, 'hidden_layer_sizes': (100, 50), 'max_iter': 1000, 'solver': 'adam'}
+0.887 (+/-0.002) for {'activation': 'relu', 'alpha': 1e-05, 'hidden_layer_sizes': (100, 50), 'max_iter': 1000, 'solver': 'adam'}
 
 Detailed classification report:
 
@@ -93,15 +93,25 @@ The scores are computed on the full evaluation set.
               precision    recall  f1-score   support
 
            0       0.89      1.00      0.94      7319
-           1       0.00      0.00      0.00       919
+           1       0.67      0.02      0.03       919
 
     accuracy                           0.89      8238
-   macro avg       0.44      0.50      0.47      8238
-weighted avg       0.79      0.89      0.84      8238
-
+   macro avg       0.78      0.51      0.49      8238
+weighted avg       0.86      0.89      0.84      8238
+ 
 
 Using Previously trained model on new data
 Normalized Mutual Info Score: 5.14780174755381e-15 
 
+              precision    recall  f1-score   support
+
+           0       0.78      1.00      0.88     23364
+           1       0.00      0.00      0.00      6635
+
+    accuracy                           0.78     29999
+   macro avg       0.39      0.50      0.44     29999
+weighted avg       0.61      0.78      0.68     29999
+ 
+
 --- Total Program Execution Time ---
---- 283.0240638256073 seconds ---
+--- 282.27934885025024 seconds ---

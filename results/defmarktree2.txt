@@ -1,0 +1,171 @@
+ECSE 689 Machine Learnng
+Data Being Analyzed: default_of_credit_card_clients.csv
+Transfer Data Being Analyzed: bank-additional-full.csv
+Number of Rows in Training Data: 30002
+Sample: 1 ,Feautures: [2, 1, 24] ,Target: 1
+Sample: 2 ,Feautures: [2, 2, 26] ,Target: 1
+Sample: 3 ,Feautures: [2, 2, 34] ,Target: 0
+Sample: 4 ,Feautures: [2, 1, 37] ,Target: 0
+Sample: 5 ,Feautures: [2, 1, 57] ,Target: 0
+Sample: 6 ,Feautures: [1, 2, 37] ,Target: 0
+Sample: 7 ,Feautures: [1, 2, 29] ,Target: 0
+Sample: 8 ,Feautures: [2, 2, 23] ,Target: 0
+Sample: 9 ,Feautures: [3, 1, 28] ,Target: 0
+Sample: 10 ,Feautures: [3, 2, 35] ,Target: 0
+Number of Rows in Transfer Data: 41189
+Sample: 1 ,Feautures: [3, 1, 57] ,Target: 0
+Sample: 2 ,Feautures: [3, 1, 37] ,Target: 0
+Sample: 3 ,Feautures: [4, 1, 40] ,Target: 0
+Sample: 4 ,Feautures: [3, 1, 56] ,Target: 0
+Sample: 5 ,Feautures: [4, 1, 45] ,Target: 0
+Sample: 6 ,Feautures: [4, 1, 59] ,Target: 0
+Sample: 7 ,Feautures: [4, 1, 41] ,Target: 0
+Sample: 8 ,Feautures: [4, 2, 24] ,Target: 0
+Sample: 9 ,Feautures: [3, 2, 25] ,Target: 0
+Sample: 10 ,Feautures: [4, 1, 41] ,Target: 0
+You Choose Decision Tree
+Best parameters set found on development set:
+
+{'criterion': 'gini', 'max_depth': 20, 'min_samples_leaf': 5, 'min_samples_split': 40, 'splitter': 'random'}
+
+Grid scores on development set:
+
+0.776 (+/-0.001) for {'criterion': 'gini', 'max_depth': 10, 'min_samples_leaf': 1, 'min_samples_split': 2, 'splitter': 'best'}
+0.777 (+/-0.001) for {'criterion': 'gini', 'max_depth': 10, 'min_samples_leaf': 1, 'min_samples_split': 2, 'splitter': 'random'}
+0.776 (+/-0.001) for {'criterion': 'gini', 'max_depth': 10, 'min_samples_leaf': 1, 'min_samples_split': 10, 'splitter': 'best'}
+0.776 (+/-0.002) for {'criterion': 'gini', 'max_depth': 10, 'min_samples_leaf': 1, 'min_samples_split': 10, 'splitter': 'random'}
+0.777 (+/-0.002) for {'criterion': 'gini', 'max_depth': 10, 'min_samples_leaf': 1, 'min_samples_split': 40, 'splitter': 'best'}
+0.777 (+/-0.001) for {'criterion': 'gini', 'max_depth': 10, 'min_samples_leaf': 1, 'min_samples_split': 40, 'splitter': 'random'}
+0.776 (+/-0.001) for {'criterion': 'gini', 'max_depth': 10, 'min_samples_leaf': 3, 'min_samples_split': 2, 'splitter': 'best'}
+0.777 (+/-0.001) for {'criterion': 'gini', 'max_depth': 10, 'min_samples_leaf': 3, 'min_samples_split': 2, 'splitter': 'random'}
+0.776 (+/-0.001) for {'criterion': 'gini', 'max_depth': 10, 'min_samples_leaf': 3, 'min_samples_split': 10, 'splitter': 'best'}
+0.777 (+/-0.001) for {'criterion': 'gini', 'max_depth': 10, 'min_samples_leaf': 3, 'min_samples_split': 10, 'splitter': 'random'}
+0.777 (+/-0.002) for {'criterion': 'gini', 'max_depth': 10, 'min_samples_leaf': 3, 'min_samples_split': 40, 'splitter': 'best'}
+0.777 (+/-0.001) for {'criterion': 'gini', 'max_depth': 10, 'min_samples_leaf': 3, 'min_samples_split': 40, 'splitter': 'random'}
+0.777 (+/-0.001) for {'criterion': 'gini', 'max_depth': 10, 'min_samples_leaf': 5, 'min_samples_split': 2, 'splitter': 'best'}
+0.777 (+/-0.001) for {'criterion': 'gini', 'max_depth': 10, 'min_samples_leaf': 5, 'min_samples_split': 2, 'splitter': 'random'}
+0.777 (+/-0.001) for {'criterion': 'gini', 'max_depth': 10, 'min_samples_leaf': 5, 'min_samples_split': 10, 'splitter': 'best'}
+0.777 (+/-0.001) for {'criterion': 'gini', 'max_depth': 10, 'min_samples_leaf': 5, 'min_samples_split': 10, 'splitter': 'random'}
+0.777 (+/-0.001) for {'criterion': 'gini', 'max_depth': 10, 'min_samples_leaf': 5, 'min_samples_split': 40, 'splitter': 'best'}
+0.777 (+/-0.001) for {'criterion': 'gini', 'max_depth': 10, 'min_samples_leaf': 5, 'min_samples_split': 40, 'splitter': 'random'}
+0.775 (+/-0.003) for {'criterion': 'gini', 'max_depth': 20, 'min_samples_leaf': 1, 'min_samples_split': 2, 'splitter': 'best'}
+0.775 (+/-0.003) for {'criterion': 'gini', 'max_depth': 20, 'min_samples_leaf': 1, 'min_samples_split': 2, 'splitter': 'random'}
+0.775 (+/-0.002) for {'criterion': 'gini', 'max_depth': 20, 'min_samples_leaf': 1, 'min_samples_split': 10, 'splitter': 'best'}
+0.777 (+/-0.001) for {'criterion': 'gini', 'max_depth': 20, 'min_samples_leaf': 1, 'min_samples_split': 10, 'splitter': 'random'}
+0.776 (+/-0.001) for {'criterion': 'gini', 'max_depth': 20, 'min_samples_leaf': 1, 'min_samples_split': 40, 'splitter': 'best'}
+0.777 (+/-0.001) for {'criterion': 'gini', 'max_depth': 20, 'min_samples_leaf': 1, 'min_samples_split': 40, 'splitter': 'random'}
+0.775 (+/-0.003) for {'criterion': 'gini', 'max_depth': 20, 'min_samples_leaf': 3, 'min_samples_split': 2, 'splitter': 'best'}
+0.777 (+/-0.001) for {'criterion': 'gini', 'max_depth': 20, 'min_samples_leaf': 3, 'min_samples_split': 2, 'splitter': 'random'}
+0.775 (+/-0.003) for {'criterion': 'gini', 'max_depth': 20, 'min_samples_leaf': 3, 'min_samples_split': 10, 'splitter': 'best'}
+0.776 (+/-0.001) for {'criterion': 'gini', 'max_depth': 20, 'min_samples_leaf': 3, 'min_samples_split': 10, 'splitter': 'random'}
+0.776 (+/-0.001) for {'criterion': 'gini', 'max_depth': 20, 'min_samples_leaf': 3, 'min_samples_split': 40, 'splitter': 'best'}
+0.777 (+/-0.002) for {'criterion': 'gini', 'max_depth': 20, 'min_samples_leaf': 3, 'min_samples_split': 40, 'splitter': 'random'}
+0.776 (+/-0.002) for {'criterion': 'gini', 'max_depth': 20, 'min_samples_leaf': 5, 'min_samples_split': 2, 'splitter': 'best'}
+0.777 (+/-0.001) for {'criterion': 'gini', 'max_depth': 20, 'min_samples_leaf': 5, 'min_samples_split': 2, 'splitter': 'random'}
+0.776 (+/-0.002) for {'criterion': 'gini', 'max_depth': 20, 'min_samples_leaf': 5, 'min_samples_split': 10, 'splitter': 'best'}
+0.777 (+/-0.002) for {'criterion': 'gini', 'max_depth': 20, 'min_samples_leaf': 5, 'min_samples_split': 10, 'splitter': 'random'}
+0.777 (+/-0.001) for {'criterion': 'gini', 'max_depth': 20, 'min_samples_leaf': 5, 'min_samples_split': 40, 'splitter': 'best'}
+0.778 (+/-0.000) for {'criterion': 'gini', 'max_depth': 20, 'min_samples_leaf': 5, 'min_samples_split': 40, 'splitter': 'random'}
+0.775 (+/-0.003) for {'criterion': 'gini', 'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'splitter': 'best'}
+0.775 (+/-0.003) for {'criterion': 'gini', 'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'splitter': 'random'}
+0.775 (+/-0.002) for {'criterion': 'gini', 'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 10, 'splitter': 'best'}
+0.775 (+/-0.003) for {'criterion': 'gini', 'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 10, 'splitter': 'random'}
+0.776 (+/-0.001) for {'criterion': 'gini', 'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 40, 'splitter': 'best'}
+0.777 (+/-0.001) for {'criterion': 'gini', 'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 40, 'splitter': 'random'}
+0.775 (+/-0.003) for {'criterion': 'gini', 'max_depth': None, 'min_samples_leaf': 3, 'min_samples_split': 2, 'splitter': 'best'}
+0.777 (+/-0.001) for {'criterion': 'gini', 'max_depth': None, 'min_samples_leaf': 3, 'min_samples_split': 2, 'splitter': 'random'}
+0.775 (+/-0.003) for {'criterion': 'gini', 'max_depth': None, 'min_samples_leaf': 3, 'min_samples_split': 10, 'splitter': 'best'}
+0.776 (+/-0.002) for {'criterion': 'gini', 'max_depth': None, 'min_samples_leaf': 3, 'min_samples_split': 10, 'splitter': 'random'}
+0.776 (+/-0.001) for {'criterion': 'gini', 'max_depth': None, 'min_samples_leaf': 3, 'min_samples_split': 40, 'splitter': 'best'}
+0.777 (+/-0.001) for {'criterion': 'gini', 'max_depth': None, 'min_samples_leaf': 3, 'min_samples_split': 40, 'splitter': 'random'}
+0.776 (+/-0.002) for {'criterion': 'gini', 'max_depth': None, 'min_samples_leaf': 5, 'min_samples_split': 2, 'splitter': 'best'}
+0.777 (+/-0.002) for {'criterion': 'gini', 'max_depth': None, 'min_samples_leaf': 5, 'min_samples_split': 2, 'splitter': 'random'}
+0.776 (+/-0.002) for {'criterion': 'gini', 'max_depth': None, 'min_samples_leaf': 5, 'min_samples_split': 10, 'splitter': 'best'}
+0.777 (+/-0.001) for {'criterion': 'gini', 'max_depth': None, 'min_samples_leaf': 5, 'min_samples_split': 10, 'splitter': 'random'}
+0.777 (+/-0.001) for {'criterion': 'gini', 'max_depth': None, 'min_samples_leaf': 5, 'min_samples_split': 40, 'splitter': 'best'}
+0.777 (+/-0.001) for {'criterion': 'gini', 'max_depth': None, 'min_samples_leaf': 5, 'min_samples_split': 40, 'splitter': 'random'}
+0.776 (+/-0.000) for {'criterion': 'entropy', 'max_depth': 10, 'min_samples_leaf': 1, 'min_samples_split': 2, 'splitter': 'best'}
+0.776 (+/-0.002) for {'criterion': 'entropy', 'max_depth': 10, 'min_samples_leaf': 1, 'min_samples_split': 2, 'splitter': 'random'}
+0.776 (+/-0.001) for {'criterion': 'entropy', 'max_depth': 10, 'min_samples_leaf': 1, 'min_samples_split': 10, 'splitter': 'best'}
+0.777 (+/-0.001) for {'criterion': 'entropy', 'max_depth': 10, 'min_samples_leaf': 1, 'min_samples_split': 10, 'splitter': 'random'}
+0.777 (+/-0.001) for {'criterion': 'entropy', 'max_depth': 10, 'min_samples_leaf': 1, 'min_samples_split': 40, 'splitter': 'best'}
+0.777 (+/-0.001) for {'criterion': 'entropy', 'max_depth': 10, 'min_samples_leaf': 1, 'min_samples_split': 40, 'splitter': 'random'}
+0.776 (+/-0.001) for {'criterion': 'entropy', 'max_depth': 10, 'min_samples_leaf': 3, 'min_samples_split': 2, 'splitter': 'best'}
+0.777 (+/-0.002) for {'criterion': 'entropy', 'max_depth': 10, 'min_samples_leaf': 3, 'min_samples_split': 2, 'splitter': 'random'}
+0.776 (+/-0.001) for {'criterion': 'entropy', 'max_depth': 10, 'min_samples_leaf': 3, 'min_samples_split': 10, 'splitter': 'best'}
+0.777 (+/-0.002) for {'criterion': 'entropy', 'max_depth': 10, 'min_samples_leaf': 3, 'min_samples_split': 10, 'splitter': 'random'}
+0.777 (+/-0.001) for {'criterion': 'entropy', 'max_depth': 10, 'min_samples_leaf': 3, 'min_samples_split': 40, 'splitter': 'best'}
+0.777 (+/-0.001) for {'criterion': 'entropy', 'max_depth': 10, 'min_samples_leaf': 3, 'min_samples_split': 40, 'splitter': 'random'}
+0.777 (+/-0.001) for {'criterion': 'entropy', 'max_depth': 10, 'min_samples_leaf': 5, 'min_samples_split': 2, 'splitter': 'best'}
+0.777 (+/-0.001) for {'criterion': 'entropy', 'max_depth': 10, 'min_samples_leaf': 5, 'min_samples_split': 2, 'splitter': 'random'}
+0.777 (+/-0.001) for {'criterion': 'entropy', 'max_depth': 10, 'min_samples_leaf': 5, 'min_samples_split': 10, 'splitter': 'best'}
+0.777 (+/-0.002) for {'criterion': 'entropy', 'max_depth': 10, 'min_samples_leaf': 5, 'min_samples_split': 10, 'splitter': 'random'}
+0.777 (+/-0.001) for {'criterion': 'entropy', 'max_depth': 10, 'min_samples_leaf': 5, 'min_samples_split': 40, 'splitter': 'best'}
+0.777 (+/-0.000) for {'criterion': 'entropy', 'max_depth': 10, 'min_samples_leaf': 5, 'min_samples_split': 40, 'splitter': 'random'}
+0.775 (+/-0.003) for {'criterion': 'entropy', 'max_depth': 20, 'min_samples_leaf': 1, 'min_samples_split': 2, 'splitter': 'best'}
+0.775 (+/-0.002) for {'criterion': 'entropy', 'max_depth': 20, 'min_samples_leaf': 1, 'min_samples_split': 2, 'splitter': 'random'}
+0.775 (+/-0.002) for {'criterion': 'entropy', 'max_depth': 20, 'min_samples_leaf': 1, 'min_samples_split': 10, 'splitter': 'best'}
+0.776 (+/-0.002) for {'criterion': 'entropy', 'max_depth': 20, 'min_samples_leaf': 1, 'min_samples_split': 10, 'splitter': 'random'}
+0.776 (+/-0.001) for {'criterion': 'entropy', 'max_depth': 20, 'min_samples_leaf': 1, 'min_samples_split': 40, 'splitter': 'best'}
+0.777 (+/-0.001) for {'criterion': 'entropy', 'max_depth': 20, 'min_samples_leaf': 1, 'min_samples_split': 40, 'splitter': 'random'}
+0.775 (+/-0.002) for {'criterion': 'entropy', 'max_depth': 20, 'min_samples_leaf': 3, 'min_samples_split': 2, 'splitter': 'best'}
+0.777 (+/-0.002) for {'criterion': 'entropy', 'max_depth': 20, 'min_samples_leaf': 3, 'min_samples_split': 2, 'splitter': 'random'}
+0.775 (+/-0.002) for {'criterion': 'entropy', 'max_depth': 20, 'min_samples_leaf': 3, 'min_samples_split': 10, 'splitter': 'best'}
+0.776 (+/-0.002) for {'criterion': 'entropy', 'max_depth': 20, 'min_samples_leaf': 3, 'min_samples_split': 10, 'splitter': 'random'}
+0.776 (+/-0.002) for {'criterion': 'entropy', 'max_depth': 20, 'min_samples_leaf': 3, 'min_samples_split': 40, 'splitter': 'best'}
+0.777 (+/-0.001) for {'criterion': 'entropy', 'max_depth': 20, 'min_samples_leaf': 3, 'min_samples_split': 40, 'splitter': 'random'}
+0.776 (+/-0.002) for {'criterion': 'entropy', 'max_depth': 20, 'min_samples_leaf': 5, 'min_samples_split': 2, 'splitter': 'best'}
+0.777 (+/-0.002) for {'criterion': 'entropy', 'max_depth': 20, 'min_samples_leaf': 5, 'min_samples_split': 2, 'splitter': 'random'}
+0.776 (+/-0.002) for {'criterion': 'entropy', 'max_depth': 20, 'min_samples_leaf': 5, 'min_samples_split': 10, 'splitter': 'best'}
+0.777 (+/-0.001) for {'criterion': 'entropy', 'max_depth': 20, 'min_samples_leaf': 5, 'min_samples_split': 10, 'splitter': 'random'}
+0.777 (+/-0.001) for {'criterion': 'entropy', 'max_depth': 20, 'min_samples_leaf': 5, 'min_samples_split': 40, 'splitter': 'best'}
+0.778 (+/-0.000) for {'criterion': 'entropy', 'max_depth': 20, 'min_samples_leaf': 5, 'min_samples_split': 40, 'splitter': 'random'}
+0.775 (+/-0.003) for {'criterion': 'entropy', 'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'splitter': 'best'}
+0.775 (+/-0.003) for {'criterion': 'entropy', 'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'splitter': 'random'}
+0.775 (+/-0.002) for {'criterion': 'entropy', 'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 10, 'splitter': 'best'}
+0.776 (+/-0.001) for {'criterion': 'entropy', 'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 10, 'splitter': 'random'}
+0.776 (+/-0.001) for {'criterion': 'entropy', 'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 40, 'splitter': 'best'}
+0.777 (+/-0.001) for {'criterion': 'entropy', 'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 40, 'splitter': 'random'}
+0.775 (+/-0.002) for {'criterion': 'entropy', 'max_depth': None, 'min_samples_leaf': 3, 'min_samples_split': 2, 'splitter': 'best'}
+0.777 (+/-0.001) for {'criterion': 'entropy', 'max_depth': None, 'min_samples_leaf': 3, 'min_samples_split': 2, 'splitter': 'random'}
+0.775 (+/-0.002) for {'criterion': 'entropy', 'max_depth': None, 'min_samples_leaf': 3, 'min_samples_split': 10, 'splitter': 'best'}
+0.777 (+/-0.002) for {'criterion': 'entropy', 'max_depth': None, 'min_samples_leaf': 3, 'min_samples_split': 10, 'splitter': 'random'}
+0.776 (+/-0.002) for {'criterion': 'entropy', 'max_depth': None, 'min_samples_leaf': 3, 'min_samples_split': 40, 'splitter': 'best'}
+0.778 (+/-0.000) for {'criterion': 'entropy', 'max_depth': None, 'min_samples_leaf': 3, 'min_samples_split': 40, 'splitter': 'random'}
+0.776 (+/-0.002) for {'criterion': 'entropy', 'max_depth': None, 'min_samples_leaf': 5, 'min_samples_split': 2, 'splitter': 'best'}
+0.777 (+/-0.001) for {'criterion': 'entropy', 'max_depth': None, 'min_samples_leaf': 5, 'min_samples_split': 2, 'splitter': 'random'}
+0.776 (+/-0.002) for {'criterion': 'entropy', 'max_depth': None, 'min_samples_leaf': 5, 'min_samples_split': 10, 'splitter': 'best'}
+0.777 (+/-0.001) for {'criterion': 'entropy', 'max_depth': None, 'min_samples_leaf': 5, 'min_samples_split': 10, 'splitter': 'random'}
+0.777 (+/-0.001) for {'criterion': 'entropy', 'max_depth': None, 'min_samples_leaf': 5, 'min_samples_split': 40, 'splitter': 'best'}
+0.777 (+/-0.001) for {'criterion': 'entropy', 'max_depth': None, 'min_samples_leaf': 5, 'min_samples_split': 40, 'splitter': 'random'}
+
+Detailed classification report:
+
+The model is trained on the full development set.
+The scores are computed on the full evaluation set.
+
+              precision    recall  f1-score   support
+
+           0       0.78      1.00      0.88      4703
+           1       0.50      0.00      0.00      1297
+
+    accuracy                           0.78      6000
+   macro avg       0.64      0.50      0.44      6000
+weighted avg       0.72      0.78      0.69      6000
+ 
+
+Using Previously trained model on new data
+Normalized Mutual Info Score: 0.00013332226353779937 
+
+              precision    recall  f1-score   support
+
+           0       0.89      0.99      0.94     36547
+           1       0.08      0.00      0.01      4640
+
+    accuracy                           0.88     41187
+   macro avg       0.49      0.50      0.47     41187
+weighted avg       0.80      0.88      0.83     41187
+ 
+
+--- Total Program Execution Time ---
+--- 144.26824498176575 seconds ---
