@@ -39,7 +39,7 @@ def machine_learning(method, tuned_parameters):
 def transfer_learning(clf):
     print('Using Previously trained model on new data')
     y_true, y_pred = other_y, clf.predict(other_x)
-    print('NMI:', normalized_mutual_info_score(y_true, y_pred), '\n')
+    print('Normalized Mutual Info Score:', normalized_mutual_info_score(y_true, y_pred), '\n')
 
 
 start_time = time.time()
@@ -247,15 +247,15 @@ if row_count2 > 0:
 
 X_train, X_test, y_train, y_test = train_test_split(all_x, all_y, test_size=0.2, random_state=0)
 
-if algorithm == 'SVC':
-    print('You Choose SVC')
+if algorithm == 'svm':
+    print('You Choose Support Vector Machines')
     tuned_parameters = [
         {'kernel': ['rbf'], 'gamma': [1e-3, 'scale', 'auto'],'C': [1, 10, 100, 1000]},
         {'kernel': ['linear'], 'C': [1, 10, 100, 1000]}
         ]
     clf = machine_learning(SVC(), tuned_parameters)
-elif algorithm == 'logistic':
-    print('You Choose Logistic')
+elif algorithm == 'log':
+    print('You Choose Logistic Regression')
     tuned_parameters = [
         {'penalty': ['l2'], 'random_state': [0], 'C': [1, 10, 100], 'solver': ['lbfgs'], 'max_iter': [100000], 'multi_class': ['multinomial', 'ovr']},
         {'penalty': ['none'], 'random_state': [0], 'solver': ['lbfgs'], 'max_iter': [100000], 'multi_class': ['multinomial', 'ovr']},

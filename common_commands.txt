@@ -1,0 +1,1 @@
+python3 main.py /home/ubuntu/ecse689/data/bank-additional/bank-additional-full.csv 1 50000 market-default SVC /home/ubuntu/ecse689/data/default_of_credit_card_clients.csv >&1 | tee markdefsvm.txt
