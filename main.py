@@ -1,11 +1,10 @@
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import mean_squared_error
 from sklearn.model_selection import GridSearchCV
 from sklearn.metrics import classification_report
-from sklearn.metrics import accuracy_score
-from sklearn import svm, linear_model
-from sklearn.svm import SVC
 from sklearn.linear_model import LogisticRegression
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.naive_bayes import GaussianNB
+from sklearn.svm import SVC
 import numpy as np
 import time
 import csv
@@ -43,6 +42,7 @@ row_offset = int(sys.argv[2]) - 1 # number of beginning rows to skip over
 row_stop = int(sys.argv[3])
 data_type = sys.argv[4]
 algorithm = sys.argv[5]
+small = int(sys.argv[6])
 
 print('Data Being Analyzed:', data_location.split('/')[-1])
 
@@ -117,7 +117,8 @@ poutcome = {
 
 all_x = []
 all_y = []
-scores = ['precision', 'recall']
+other_x = []
+other_y = []
 
 with open(data_location) as csv_data:
     csv_reader = csv.reader(csv_data, delimiter=',')
@@ -179,6 +180,20 @@ elif algorithm == 'logistic':
         {'penalty': ['l2'], 'random_state': [0], 'C': [1, 10, 100], 'solver': ['liblinear'], 'max_iter': [100000], 'multi_class': ['multinomial', 'ovr']}
     ]
     machine_learning(LogisticRegression(), tuned_parameters)
+elif algorithm == 'tree':
+    print('You Choose Decision Tree')
+    tuned_parameters = [
+        {'criterion': ['gini', 'entropy'], 'splitter': ['best', 'random'], 'min_samples_split': [2, 10, 40]}
+    ]
+    machine_learning(DecisionTreeClassifier(), tuned_parameters)
+elif algorithm == 'neural':
+    print('You Choose MLP Neural Networks')
+elif algorithm == 'bayes':
+    print('You Choose Gaussian Naive Bayes')
+    tuned_parameters = [
+
+    ]
+    machine_learning(GaussianNB(), tuned_parameters)
 else:
     print('Machine Learning Algorithm Wrong')
 
