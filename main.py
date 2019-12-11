@@ -48,7 +48,7 @@ row_offset = int(sys.argv[2]) - 1 # number of beginning rows to skip over
 row_stop = int(sys.argv[3])
 data_type = sys.argv[4]
 algorithm = sys.argv[5]
-small = int(sys.argv[6])
+data_location2 = sys.argv[6]
 
 print('Data Being Analyzed:', data_location.split('/')[-1])
 
@@ -119,7 +119,31 @@ poutcome = {
     'success': 2
 }
 
-#Marketting to 
+#Transfer Keys
+education_transfer = {
+    '1': 6,
+    '2': 6,
+    '3': 3,
+    '4': 7,
+    'basic.4y': 4,
+    'basic.6y': 4,
+    'basic.9y': 4,
+    'high.school': 3,
+    'illiterate': 4,
+    'professional.course': 4,
+    'university.degree': 2,
+    'unknown': 4
+}
+
+martial_transfer = {
+    '1': 1,
+    '2': 2,
+    '3': 3,
+    'divorced': 3,
+    'married': 1,
+    'single': 2,
+    'unknown': 3
+}
 
 all_x = []
 all_y = []
@@ -130,6 +154,7 @@ with open(data_location) as csv_data:
     csv_reader = csv.reader(csv_data, delimiter=',')
 
     row_count = 0
+    row_count2 = 0
     for row in csv_reader:
         if row_count > row_offset and row_count < row_stop:
             if data_type == 'default':
@@ -163,11 +188,53 @@ with open(data_location) as csv_data:
 
                 all_x.append(list(values[0:20]))
                 all_y.append(values[20])
+            elif data_type == 'market-default':
+                values = [s.replace('"', '') for s in row[0].split(';')]
+
+                values[0] = int(values[0])
+                values[2] = marital[values[2]]
+                values[3] = education[values[3]]
+                values[20] = binary[values[20]]
+
+                all_x.append([values[0], values[2], values[3]])
+                all_y.append(values[20])
+
+                with open(data_location2) as csv_data2:
+                    csv_reader2 = csv.reader(csv_data2, delimiter=',')
+                    for row2 in csv_reader2:
+                        if row_count2 > 2:
+                            other_x.append([int(row2[5]), martial_transfer[row2[4]], education_transfer[row2[3]]])
+                            other_y.append(int(row2[24]))
+                        row_count2 += 1
+            elif data_type == 'default-market':
+                all_x.append([int(row[3]), int(row[4]), int(row[5])])
+                all_y.append(int(row[24]))
+
+                with open(data_location2) as csv_data2:
+                    csv_reader2 = csv.reader(csv_data2, delimiter=',')
+                    for row2 in csv_reader2:
+                        if row_count2 > 1:
+                            values = [s.replace('"', '') for s in row2[0].split(';')]
+
+                            values[0] = int(values[0])
+                            values[2] = martial_transfer[values[2]]
+                            values[3] = education_transfer[values[3]]
+                            values[20] = binary[values[20]]
+
+                            other_x.append([values[3], values[2], values[0]])
+                            other_y.append(values[20])
+                            
+                        row_count2 += 1
         row_count += 1
 
-print('Number of Rows in Data:', row_count)
+print('Number of Rows in Training Data:', row_count)
 for i in range(10):
     print('Sample:', i+1,',Feautures:', all_x[i], ',Target:', all_y[i])
+if row_count2 > 0:
+    print('Number of Rows in Transfer Data:', row_count2)
+    for i in range(10):
+        print('Sample:', i+1,',Feautures:', other_x[i], ',Target:', other_y[i])
+
 
 X_train, X_test, y_train, y_test = train_test_split(all_x, all_y, test_size=0.2, random_state=0)
 
@@ -206,6 +273,6 @@ elif algorithm == 'bayes':
     ]
     machine_learning(GaussianNB(), tuned_parameters)
 else:
-    print('Machine Learning Algorithm Wrong')
+    print('Machine Learning Algorithm Not Available')
 
 print("--- Total Program Execution Time ---\n--- %s seconds ---" % (time.time() - start_time))
