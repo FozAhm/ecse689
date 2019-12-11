@@ -207,6 +207,7 @@ with open(data_location) as csv_data:
                     csv_reader2 = csv.reader(csv_data2, delimiter=',')
                     for row2 in csv_reader2:
                         if row_count2 > 2:
+                            print(row_count2)
                             other_x.append([int(row2[5]), martial_transfer[row2[4]], education_transfer[row2[3]]])
                             other_y.append(int(row2[24]))
                         row_count2 += 1
