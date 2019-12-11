@@ -31,8 +31,7 @@ def machine_learning(method, tuned_parameters, X_train, X_test, y_train, y_test)
     print("The model is trained on the full development set.")
     print("The scores are computed on the full evaluation set.\n")
     y_true, y_pred = y_test, clf.predict(X_test)
-    print(classification_report(y_true, y_pred))
-    print()
+    print(classification_report(y_true, y_pred), '\n')
 
     return clf
 
@@ -40,6 +39,7 @@ def transfer_learning(clf, other_x, other_y):
     print('Using Previously trained model on new data')
     y_true, y_pred = other_y, clf.predict(other_x)
     print('Normalized Mutual Info Score:', normalized_mutual_info_score(y_true, y_pred), '\n')
+    print(classification_report(y_true, y_pred), '\n')
 
 
 start_time = time.time()

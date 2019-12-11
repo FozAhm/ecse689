@@ -23,19 +23,29 @@ Sample: 7 ,Feautures: [23, 2, 6] ,Target: 0
 Sample: 8 ,Feautures: [28, 1, 3] ,Target: 0
 Sample: 9 ,Feautures: [35, 2, 3] ,Target: 0
 Sample: 10 ,Feautures: [34, 2, 3] ,Target: 0
-You Choose Gaussian Naive Bayes
+You Choose SVC
 Best parameters set found on development set:
 
-{'var_smoothing': 1e-06}
+{'C': 1, 'gamma': 0.001, 'kernel': 'rbf'}
 
 Grid scores on development set:
 
-0.886 (+/-0.003) for {'var_smoothing': 1e-06}
-0.886 (+/-0.003) for {'var_smoothing': 1e-09}
-0.886 (+/-0.003) for {'var_smoothing': 1e-12}
-0.886 (+/-0.003) for {'var_smoothing': 1e-15}
-0.886 (+/-0.003) for {'var_smoothing': 1e-18}
-0.886 (+/-0.003) for {'var_smoothing': 1e-20}
+0.887 (+/-0.000) for {'C': 1, 'gamma': 0.001, 'kernel': 'rbf'}
+0.887 (+/-0.000) for {'C': 1, 'gamma': 'scale', 'kernel': 'rbf'}
+0.886 (+/-0.002) for {'C': 1, 'gamma': 'auto', 'kernel': 'rbf'}
+0.887 (+/-0.000) for {'C': 10, 'gamma': 0.001, 'kernel': 'rbf'}
+0.887 (+/-0.000) for {'C': 10, 'gamma': 'scale', 'kernel': 'rbf'}
+0.885 (+/-0.003) for {'C': 10, 'gamma': 'auto', 'kernel': 'rbf'}
+0.887 (+/-0.000) for {'C': 100, 'gamma': 0.001, 'kernel': 'rbf'}
+0.887 (+/-0.000) for {'C': 100, 'gamma': 'scale', 'kernel': 'rbf'}
+0.885 (+/-0.003) for {'C': 100, 'gamma': 'auto', 'kernel': 'rbf'}
+0.887 (+/-0.000) for {'C': 1000, 'gamma': 0.001, 'kernel': 'rbf'}
+0.887 (+/-0.000) for {'C': 1000, 'gamma': 'scale', 'kernel': 'rbf'}
+0.885 (+/-0.003) for {'C': 1000, 'gamma': 'auto', 'kernel': 'rbf'}
+0.887 (+/-0.000) for {'C': 1, 'kernel': 'linear'}
+0.887 (+/-0.000) for {'C': 10, 'kernel': 'linear'}
+0.887 (+/-0.000) for {'C': 100, 'kernel': 'linear'}
+0.887 (+/-0.000) for {'C': 1000, 'kernel': 'linear'}
 
 Detailed classification report:
 
@@ -45,15 +55,15 @@ The scores are computed on the full evaluation set.
               precision    recall  f1-score   support
 
            0       0.89      1.00      0.94      7319
-           1       0.53      0.04      0.08       919
+           1       0.00      0.00      0.00       919
 
     accuracy                           0.89      8238
-   macro avg       0.71      0.52      0.51      8238
-weighted avg       0.85      0.89      0.84      8238
+   macro avg       0.44      0.50      0.47      8238
+weighted avg       0.79      0.89      0.84      8238
 
 
 Using Previously trained model on new data
-Normalized Mutual Info Score: 9.899945795659466e-05 
+NMI: 5.14780174755381e-15 
 
 --- Total Program Execution Time ---
---- 8.576521396636963 seconds ---
+--- 5866.186275959015 seconds ---
